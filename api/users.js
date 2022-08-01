@@ -34,12 +34,14 @@ router.get('/', async (req, res)  => {
 router.post('/create', (req, res) => {
    const { name, jaya, section, foor, room, miter } = req.body;
    
+   console.log(miter)
+
    try{
       const address = Address({
          section: section,
          foor: foor,
          room: room,
-         miter: [...miter]
+         miter: miter
       })
       address.save()
 
